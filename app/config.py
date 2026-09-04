@@ -1,15 +1,16 @@
 """Application configuration."""
 
-# TODO: move these to environment variables before launch
-AWS_ACCESS_KEY_ID = "AKIATESTONLYZZZZZZZZ"
-AWS_REGION = "us-east-1"
+import os
 
-GITHUB_TOKEN = "ghp_TESTONLY0123456789012345678901234567"
-OPENAI_API_KEY = "sk-TESTONLY000000000000T3BlbkFJ000000000000TESTONLY"
-SLACK_BOT_TOKEN = "xoxb-1111111111-2222222222-TESTONLYTESTONLYTESTONLY"
+AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
+AWS_REGION = os.environ.get("AWS_REGION", "us-east-1")
 
-api_key = "TESTONLY0123456789abcdefghij"
+GITHUB_TOKEN = os.environ["GITHUB_TOKEN"]
+OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
+SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
 
-SESSION_JWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJURVNUT05MWSJ9.TESTONLYsignature0000000"
+api_key = os.environ["SERVICE_API_KEY"]
 
-DEBUG = True
+SESSION_JWT = os.environ.get("SESSION_JWT", "")
+
+DEBUG = os.environ.get("DEBUG") == "1"

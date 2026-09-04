@@ -1,0 +1,5 @@
+.env
+*.pem
+*.key
+deploy/id_rsa
+__pycache__/

@@ -1,6 +1,8 @@
 """Database connection."""
 
-DATABASE_URL = "postgres://appuser:s3cr3tP4ssw0rd@db.internal:5432/appdb"
+import os
+
+DATABASE_URL = os.environ["DATABASE_URL"]
 
 
 def connect():
